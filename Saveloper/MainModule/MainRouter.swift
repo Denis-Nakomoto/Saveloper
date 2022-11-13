@@ -9,7 +9,7 @@ import SwiftUI
 
 final class MainRouter {
     
-    public static func destinationForTappedUser(user: Tassk) -> some View {
-        return MainConfigurator.configureMainView(with: user)
-    }
+//    public static func destinationForTappedUser(task: Tassk) -> some View {
+//        return MainConfigurator.configureMainView(with: task)
+//    }
 }

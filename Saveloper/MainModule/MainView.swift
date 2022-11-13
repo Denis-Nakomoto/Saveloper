@@ -6,34 +6,80 @@
 //
 
 import SwiftUI
-
-import SwiftUI
+import Combine
+import CoreData
 
 struct MainView: View {
     
-    @ObservedObject var viewModel: MainViewModel
+    @EnvironmentObject var persistenceController: PersistenceController
+    @Environment(\.managedObjectContext) var managedObjectContext
+    var event: FetchRequest<Events>
+    var category: FetchRequest<Category>
+
+    private var cancelBag = CancelBag()
+    
+    init() {
+        let request: NSFetchRequest<Events> = Events.fetchRequest()
+        request.sortDescriptors = [
+            NSSortDescriptor(keyPath: \Events.value, ascending: false)
+        ]
+        event = FetchRequest(fetchRequest: request)
+        
+        let requestCat: NSFetchRequest<Category> = Category.fetchRequest()
+        requestCat.sortDescriptors = [
+            NSSortDescriptor(keyPath: \Category.category, ascending: false)
+        ]
+        category = FetchRequest(fetchRequest: requestCat)
+    }
     
     var body: some View {
-        NavigationView {
-            List(viewModel.users.data) { user in
-                
-                NavigationLink(
-                    destination: MainRouter.destinationForTappedUser(
-                        user: user)
-                ) {
-                    Text(user.firstName)
+        ZStack {
+            VStack {
+                Button("Add event") {
+                    addTask()
                 }
-                
-            }.navigationTitle("Users")
-        }.onAppear(perform: {
-            viewModel.onAppear()
-        })
+                Spacer()
+            }
+            PieChart(pieSlices: createSlices())
+            AddEventView(60)
+            VStack {
+                Spacer()
+                ForEach(category.wrappedValue, id: \.self) { cat in
+                    Text(cat.category ?? "")
+                }
+            }
+        }
     }
-}
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView(viewModel: MainViewModel())
+    
+    func createSlices() -> [PieSlice] {
+        var slices = [PieSlice]()
+        event.wrappedValue.enumerated().forEach { (index, data) in
+            let value = normalizedValue(index: index, data: event)
+            if slices.isEmpty {
+                slices.append((.init(startDegree: 0, endDegree: value * 360)))
+            } else {
+                slices.append(.init(startDegree: slices.last!.endDegree,
+                                    endDegree: (value * 360 + slices.last!.endDegree)))
+            }
+        }
+        return slices
     }
-}
+    
+    func addTask() {
+        let event = Events(context: managedObjectContext)
+        let category = Category(context: managedObjectContext)
+        category.category = "person"
+        event.date = Date()
+        event.inOrOut = Bool.random()
+        event.favorite = Bool.random()
+        event.value = Double.random(in: 0...300)
+        event.category = category
+        persistenceController.save()
+    }
+    
+    func deleteAll() {
+        persistenceController.deleteAll()
+    }
+    
 
+}

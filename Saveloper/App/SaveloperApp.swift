@@ -9,9 +9,24 @@ import SwiftUI
 
 @main
 struct SaveloperApp: App {
-        var body: some Scene {
-            WindowGroup {
-                MainConfigurator.configureMainView()
-            }
+    
+    @StateObject var persistenceController: PersistenceController
+    
+    init() {
+        _persistenceController = StateObject(wrappedValue: PersistenceController())
+    }
+    
+    var body: some Scene {
+        WindowGroup {
+            MainConfigurator.configureMainView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(persistenceController)
+                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification),
+                           perform: save)
         }
+    }
+    
+    func save(_ note: Notification) {
+        persistenceController.save()
+    }
 }

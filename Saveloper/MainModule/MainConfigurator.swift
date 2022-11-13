@@ -13,7 +13,7 @@ final class MainConfigurator {
         with viewModel: MainViewModel = MainViewModel()
     ) -> MainView {
         
-        let mainView = MainView(viewModel: viewModel)
+        let mainView = MainView()
         return mainView
     }
 }
