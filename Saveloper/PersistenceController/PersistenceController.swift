@@ -24,7 +24,7 @@ class PersistenceController: ObservableObject {
             container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
         }
         
-        container.loadPersistentStores { description, error in
+        container.loadPersistentStores { _, error in
             if let error = error {
                 fatalError("Error: \(error.localizedDescription)")
             }
@@ -34,29 +34,33 @@ class PersistenceController: ObservableObject {
     // A test configuration for SwiftUI previews
     static var preview: PersistenceController = {
         let controller = PersistenceController(inMemory: true)
-        for i in 0..<5 {
+        for item in 0..<5 {
             let task = Events(context: controller.container.viewContext)
             task.date = Date()
             task.inOrOut = Bool.random()
             task.favorite = Bool.random()
-            task.value = Double(i * 10)
+            task.value = Double(item * 10)
         }
         return controller
     }()
-    
+
     func save() {
         if container.viewContext.hasChanges {
             try? container.viewContext.save()
         }
     }
-    
+
     func delete(_ object: NSManagedObject) {
         container.viewContext.delete(object)
     }
-    
+
     func deleteAll() {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Events.fetchRequest()
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         _ = try? container.viewContext.execute(batchDeleteRequest)
+        
+        let fetchRequestCategories: NSFetchRequest<NSFetchRequestResult> = Category.fetchRequest()
+        let batchDeleteRequestCategories = NSBatchDeleteRequest(fetchRequest: fetchRequestCategories)
+        _ = try? container.viewContext.execute(batchDeleteRequestCategories)
     }
 }

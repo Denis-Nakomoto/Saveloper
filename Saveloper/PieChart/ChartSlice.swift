@@ -13,13 +13,15 @@ struct PieChartSlice: View {
     var radius: CGFloat
     var startDegree: Double
     var endDegree: Double
-    var isTouched:  Bool
-    var accentColor:  Color
+    var isTouched: Bool
+    var accentColor: Color
     var separatorColor: Color
     
     var path: Path {
         var path = Path()
-        path.addArc(center: center, radius: radius, startAngle: Angle(degrees: startDegree), endAngle: Angle(degrees: endDegree), clockwise: false)
+        path.addArc(center: center, radius: radius,
+                    startAngle: Angle(degrees: startDegree),
+                    endAngle: Angle(degrees: endDegree), clockwise: false)
         path.addLine(to: center)
         path.closeSubpath()
         return path
@@ -36,6 +38,9 @@ struct PieChartSlice: View {
 
 struct PieChartSlice_Previews: PreviewProvider {
     static var previews: some View {
-        PieChartSlice(center: CGPoint(x: 100, y: 200), radius: 300, startDegree: 30, endDegree: 80, isTouched: true, accentColor: .orange, separatorColor: .black)
+        PieChartSlice(center: CGPoint(x: 100, y: 200),
+                      radius: 300, startDegree: 30, endDegree: 80,
+                      isTouched: true, accentColor: .orange,
+                      separatorColor: .black)
     }
 }

@@ -10,11 +10,9 @@ import CoreData
 import SwiftUI
 
 class MainViewModel: ObservableObject {
-
-    @Published var tasks: FetchRequest<Events>
-    @EnvironmentObject var persistenceController: PersistenceController
-    @Environment(\.managedObjectContext) var managedObjectContext
-//    private var usersService: TasksServiceProtocol
+    
+    @Published var events: FetchRequest<Events>
+    @Published var categories: FetchRequest<Category>
     private var cancelBag = CancelBag()
     
     init() {
@@ -22,9 +20,14 @@ class MainViewModel: ObservableObject {
         request.sortDescriptors = [
             NSSortDescriptor(keyPath: \Events.value, ascending: false)
         ]
-        tasks = FetchRequest(fetchRequest: request)
+        events = FetchRequest(fetchRequest: request)
+        
+        let requestCat: NSFetchRequest<Category> = Category.fetchRequest()
+        requestCat.sortDescriptors = [
+            NSSortDescriptor(keyPath: \Category.category, ascending: false)
+        ]
+        categories = FetchRequest(fetchRequest: requestCat)
     }
-    
 //    public func onAppear() {
 //        self.getUsers(count: 40)
 //    }
@@ -58,4 +61,3 @@ class MainViewModel: ObservableObject {
 //        return slices
 //    }
 }
-

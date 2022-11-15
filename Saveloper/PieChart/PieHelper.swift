@@ -15,21 +15,21 @@ func normalizedValue(index: Int, data: FetchRequest<Events>) -> Double {
     return data.wrappedValue[index].value/total
 }
 
-struct PieSlice {
+struct PieSlice: Hashable {
      var startDegree: Double
      var endDegree: Double
  }
 
-func angleAtTouchLocation(inPie pieSize: CGRect, touchLocation: CGPoint) ->  Double? {
-     let dx = touchLocation.x - pieSize.midX
-     let dy = touchLocation.y - pieSize.midY
+func angleAtTouchLocation(inPie pieSize: CGRect, touchLocation: CGPoint) -> Double? {
+     let difX = touchLocation.x - pieSize.midX
+     let difY = touchLocation.y - pieSize.midY
      
-     let distanceToCenter = (dx * dx + dy * dy).squareRoot()
+     let distanceToCenter = (difX * difX + difY * difY).squareRoot()
      let radius = pieSize.width/2
      guard distanceToCenter <= radius else {
          return nil
      }
-     let angleAtTouchLocation = Double(atan2(dy, dx) * (180 / .pi))
+     let angleAtTouchLocation = Double(atan2(difY, difX) * (180 / .pi))
      if angleAtTouchLocation < 0 {
          return (180 + angleAtTouchLocation) + 180
      } else {
