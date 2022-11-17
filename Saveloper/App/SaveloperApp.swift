@@ -11,6 +11,7 @@ import SwiftUI
 struct SaveloperApp: App {
     
     @StateObject var persistenceController: PersistenceController
+    @Environment(\.scenePhase) var scenePhase
     
     init() {
         _persistenceController = StateObject(wrappedValue: PersistenceController())
@@ -18,15 +19,21 @@ struct SaveloperApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainConfigurator.configureMainView()
+            MainView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(persistenceController)
-                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification),
-                           perform: save)
         }
-    }
-    
-    func save(_ note: Notification) {
-        persistenceController.save()
+        .onChange(of: scenePhase) { newScenePhase in
+            switch newScenePhase {
+            case .background:
+                persistenceController.save()
+            case .inactive:
+                print("Scene is inactive")
+            case .active:
+                print("Scene is active")
+            @unknown default:
+                print("Apple must have changes somethig")
+            }
+        }
     }
 }

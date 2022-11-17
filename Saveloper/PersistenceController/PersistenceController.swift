@@ -44,14 +44,23 @@ class PersistenceController: ObservableObject {
         return controller
     }()
 
-    func save() {
-        if container.viewContext.hasChanges {
-            try? container.viewContext.save()
+    func save(completion: @escaping(Error?) -> Void = {_ in}) {
+        let context = container.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+                completion(nil)
+            } catch {
+                completion(error)
+            }
+            
         }
     }
 
-    func delete(_ object: NSManagedObject) {
-        container.viewContext.delete(object)
+    func delete(_ object: NSManagedObject, completion: @escaping(Error?) -> Void = {_ in}) {
+        let context = container.viewContext
+        context.delete(object)
+        save(completion: completion)
     }
 
     func deleteAll() {

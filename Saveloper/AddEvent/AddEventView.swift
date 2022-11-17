@@ -20,11 +20,6 @@ struct AddEventView: View {
     
     init(_ radius: CGFloat) {
         _radius = .init(initialValue: radius)
-//        let request: NSFetchRequest<Category> = Category.fetchRequest()
-//        request.sortDescriptors = [
-//            NSSortDescriptor(keyPath: \Category.category, ascending: false)
-//        ]
-//        categories = FetchRequest(fetchRequest: request)
     }
     
     var body: some View {
