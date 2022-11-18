@@ -65,11 +65,40 @@ class PersistenceController: ObservableObject {
 
     func deleteAll() {
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Events.fetchRequest()
-        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        _ = try? container.viewContext.execute(batchDeleteRequest)
+        let batchDeleteRequestEvent = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        batchDeleteRequestEvent.resultType = .resultTypeObjectIDs
+        let batchDeleteEvent = try? container.viewContext.execute(batchDeleteRequestEvent) as? NSBatchDeleteResult
         
         let fetchRequestCategories: NSFetchRequest<NSFetchRequestResult> = Category.fetchRequest()
         let batchDeleteRequestCategories = NSBatchDeleteRequest(fetchRequest: fetchRequestCategories)
-        _ = try? container.viewContext.execute(batchDeleteRequestCategories)
+        batchDeleteRequestCategories.resultType = .resultTypeObjectIDs
+        let batchDeleteCategory = try? container.viewContext.execute(
+            batchDeleteRequestCategories) as? NSBatchDeleteResult
+        
+        guard let deleteResultCategory = batchDeleteCategory?.result
+            as? [NSManagedObjectID]
+            else { return }
+        
+        guard let deleteResultEvent = batchDeleteEvent?.result
+            as? [NSManagedObjectID]
+            else { return }
+        
+        let deletedObjectsCategory: [AnyHashable: Any] = [
+            NSDeletedObjectsKey: deleteResultCategory
+        ]
+        
+        let deletedObjectsEvent: [AnyHashable: Any] = [
+            NSDeletedObjectsKey: deleteResultEvent
+        ]
+
+        NSManagedObjectContext.mergeChanges(
+            fromRemoteContextSave: deletedObjectsCategory,
+            into: [container.viewContext]
+        )
+        
+        NSManagedObjectContext.mergeChanges(
+            fromRemoteContextSave: deletedObjectsEvent,
+            into: [container.viewContext]
+        )
     }
 }

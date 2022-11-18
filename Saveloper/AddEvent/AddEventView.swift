@@ -71,37 +71,58 @@ struct AddEventView: View {
             var returnValue: [CategoryVector] = []
             var counter: CGFloat = 1
             for category in categories {
-                var xCordinate: CGFloat = 0
+                var xCoordinate: CGFloat = 0
                 var yCoordinate: CGFloat = 0
                 let currentAngle = baseAngle * counter
                 if (0..<90).contains(currentAngle - halfAngle) {
-                    xCordinate = cos((currentAngle - halfAngle) * Double.pi / 180) * radius
+                    xCoordinate = cos((currentAngle - halfAngle) * Double.pi / 180) * radius
                     yCoordinate = -sin((currentAngle - halfAngle) * Double.pi / 180) * radius
-                    returnValue.append(CategoryVector(xCoordinate: xCordinate, yCoordinate: yCoordinate,
+                    returnValue.append(CategoryVector(xCoordinate: xCoordinate, yCoordinate: yCoordinate,
                                                       category: category.category.orEmpty,
                                                       objectId: category.objectID))
                 }
-                if (90..<180).contains(currentAngle - halfAngle) {
+                
+                if (90..<180).contains(currentAngle - halfAngle) && categories.count != 3 {
                     let alpha = CGFloat(180) - currentAngle
-                    xCordinate = -cos((alpha + halfAngle) * Double.pi / 180) * radius
+                    xCoordinate = -cos((alpha + halfAngle) * Double.pi / 180) * radius
                     yCoordinate = -sin((alpha + halfAngle) * Double.pi / 180) * radius
-                    returnValue.append(CategoryVector(xCoordinate: xCordinate, yCoordinate: yCoordinate,
+                    returnValue.append(CategoryVector(xCoordinate: xCoordinate, yCoordinate: yCoordinate,
                                                       category: category.category.orEmpty,
                                                       objectId: category.objectID))
                 }
-                if (180..<270).contains(currentAngle - halfAngle) {
-                    let alpha = CGFloat(270) - currentAngle
-                    xCordinate = -cos((alpha + halfAngle) * Double.pi / 180) * radius
-                    yCoordinate = sin((alpha + halfAngle) * Double.pi / 180) * radius
-                    returnValue.append(CategoryVector(xCoordinate: xCordinate, yCoordinate: yCoordinate,
+                
+                if currentAngle - halfAngle == 180 && categories.count == 3 {
+                    let alpha = CGFloat(180) - currentAngle
+                    xCoordinate = -cos((alpha + halfAngle) * Double.pi / 180) * radius
+                    yCoordinate = -sin((alpha + halfAngle) * Double.pi / 180) * radius
+                    returnValue.append(CategoryVector(xCoordinate: xCoordinate, yCoordinate: yCoordinate,
                                                       category: category.category.orEmpty,
                                                       objectId: category.objectID))
                 }
-                if (270...360).contains(currentAngle - halfAngle) {
+                
+                if currentAngle - halfAngle == 180 && categories.count != 3 {
+                    let alpha = currentAngle - halfAngle
+                    xCoordinate = cos((alpha) * Double.pi / 180) * radius
+                    yCoordinate = -sin((alpha) * Double.pi / 180) * radius
+                    returnValue.append(CategoryVector(xCoordinate: xCoordinate, yCoordinate: yCoordinate,
+                                                      category: category.category.orEmpty,
+                                                      objectId: category.objectID))
+                }
+                
+                if (181..<270).contains(currentAngle - halfAngle) {
+                    let alpha = currentAngle - halfAngle
+                    xCoordinate = cos((alpha) * Double.pi / 180) * radius
+                    yCoordinate = -sin((alpha) * Double.pi / 180) * radius
+                    returnValue.append(CategoryVector(xCoordinate: xCoordinate, yCoordinate: yCoordinate,
+                                                      category: category.category.orEmpty,
+                                                      objectId: category.objectID))
+                }
+                
+                if (270..<360).contains(currentAngle - halfAngle) {
                     let alpha = CGFloat(360) - currentAngle
-                    xCordinate = cos((alpha + halfAngle) * Double.pi / 180) * radius
+                    xCoordinate = cos((alpha + halfAngle) * Double.pi / 180) * radius
                     yCoordinate = sin((alpha + halfAngle) * Double.pi / 180) * radius
-                    returnValue.append(CategoryVector(xCoordinate: xCordinate, yCoordinate: yCoordinate,
+                    returnValue.append(CategoryVector(xCoordinate: xCoordinate, yCoordinate: yCoordinate,
                                                       category: category.category.orEmpty,
                                                       objectId: category.objectID))
                 }

@@ -10,6 +10,7 @@
 		924E2CE02920FF860023181E /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E2CDF2920FF860023181E /* Optional+Extension.swift */; };
 		928DDF122923DD6700C5CF6A /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DDF112923DD6700C5CF6A /* UIScreen+Extension.swift */; };
 		928DDF1A292538C600C5CF6A /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DDF19292538C600C5CF6A /* View+Extension.swift */; };
+		928DDF1E2926872300C5CF6A /* SelectCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DDF1D2926872300C5CF6A /* SelectCategory.swift */; };
 		92B46BCC291A065A00A32F76 /* SaveloperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BCB291A065A00A32F76 /* SaveloperApp.swift */; };
 		92B46BCE291A065A00A32F76 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BCD291A065A00A32F76 /* MainView.swift */; };
 		92B46BD0291A065B00A32F76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92B46BCF291A065B00A32F76 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		928DDF19292538C600C5CF6A /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		928DDF1B292540C900C5CF6A /* UISheetPresentationControllerDetent+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UISheetPresentationControllerDetent+Private.h"; sourceTree = "<group>"; };
 		928DDF1C292540EC00C5CF6A /* CustomSPCDetent-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CustomSPCDetent-Bridging-Header.h"; sourceTree = "<group>"; };
+		928DDF1D2926872300C5CF6A /* SelectCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategory.swift; sourceTree = "<group>"; };
 		92B46BC8291A065A00A32F76 /* Saveloper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Saveloper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B46BCB291A065A00A32F76 /* SaveloperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveloperApp.swift; sourceTree = "<group>"; };
 		92B46BCD291A065A00A32F76 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -66,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		928DDF212927B10400C5CF6A /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				928DDF1D2926872300C5CF6A /* SelectCategory.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 		92B46BBF291A065A00A32F76 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +118,7 @@
 		92B46BDB291A199D00A32F76 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
+				928DDF212927B10400C5CF6A /* SubViews */,
 				92B46BD9291A196C00A32F76 /* MainConfigurator.swift */,
 				92B46BE1291A1C1F00A32F76 /* MainRouter.swift */,
 				92B46BCD291A065A00A32F76 /* MainView.swift */,
@@ -130,11 +141,6 @@
 			children = (
 				92B46BE3291AA4AE00A32F76 /* Tasks.xcdatamodeld */,
 				92B46BE7291AA5FE00A32F76 /* PersistenceController.swift */,
-				92B46BE9291BDA6200A32F76 /* Events+Extension.swift */,
-				928DDF1B292540C900C5CF6A /* UISheetPresentationControllerDetent+Private.h */,
-				928DDF1C292540EC00C5CF6A /* CustomSPCDetent-Bridging-Header.h */,
-				928DDF112923DD6700C5CF6A /* UIScreen+Extension.swift */,
-				928DDF19292538C600C5CF6A /* View+Extension.swift */,
 			);
 			path = PersistenceController;
 			sourceTree = "<group>";
@@ -161,6 +167,11 @@
 		92B46BF7291D3B9100A32F76 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				928DDF1B292540C900C5CF6A /* UISheetPresentationControllerDetent+Private.h */,
+				928DDF1C292540EC00C5CF6A /* CustomSPCDetent-Bridging-Header.h */,
+				92B46BE9291BDA6200A32F76 /* Events+Extension.swift */,
+				928DDF19292538C600C5CF6A /* View+Extension.swift */,
+				928DDF112923DD6700C5CF6A /* UIScreen+Extension.swift */,
 				92B46BF5291D3B8800A32F76 /* Color+Extension.swift */,
 				924E2CDF2920FF860023181E /* Optional+Extension.swift */,
 			);
@@ -275,6 +286,7 @@
 				92B46BCC291A065A00A32F76 /* SaveloperApp.swift in Sources */,
 				928DDF122923DD6700C5CF6A /* UIScreen+Extension.swift in Sources */,
 				92B46BDA291A196C00A32F76 /* MainConfigurator.swift in Sources */,
+				928DDF1E2926872300C5CF6A /* SelectCategory.swift in Sources */,
 				92B46BDD291A1A3A00A32F76 /* MainViewModel.swift in Sources */,
 				92B46BEA291BDA6200A32F76 /* Events+Extension.swift in Sources */,
 				92B46BE0291A1B6B00A32F76 /* CancelBag.swift in Sources */,
@@ -430,7 +442,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Denis-Svetlakov.Saveloper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Saveloper/PersistenceController/CustomSPCDetent-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Saveloper/Extensions/CustomSPCDetent-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -461,7 +473,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Denis-Svetlakov.Saveloper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Saveloper/PersistenceController/CustomSPCDetent-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Saveloper/Extensions/CustomSPCDetent-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

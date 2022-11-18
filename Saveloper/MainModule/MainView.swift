@@ -71,7 +71,7 @@ struct AddCategorySheet: View {
     @EnvironmentObject var persistenceController: PersistenceController
     @Environment(\.managedObjectContext) var managedObjectContext
     
-    let categories = ["person", "pin", "appletvremote.gen1", "bed.double.circle"]
+    let categories = ["person", "pin", "divide.circle", "bicycle.circle"]
     
     var body: some View {
         VStack {
@@ -93,9 +93,12 @@ struct AddEventSheet: View {
     
     @EnvironmentObject var persistenceController: PersistenceController
     @Environment(\.managedObjectContext) var managedObjectContext
+    
     @FetchRequest(sortDescriptors: [
         SortDescriptor(\.category)
     ]) var categories: FetchedResults<Category>
+    
+    @State var selectedCategory: Category?
     
     var body: some View {
         VStack {
@@ -103,12 +106,14 @@ struct AddEventSheet: View {
                 addEvent()
             }
             .padding()
+            SelectCategory(value: $selectedCategory)
+                .padding()
         }
     }
     
     private func addEvent() {
         let event = Events(context: managedObjectContext)
-        if let category = categories.randomElement() {
+        if let category = selectedCategory {
             event.category = category
         }
         event.date = Date()

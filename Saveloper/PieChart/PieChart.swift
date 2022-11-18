@@ -24,15 +24,9 @@ struct PieChart: View {
     @State private var currentValue = ""
     @State private var currentLabel = ""
     @State private var touchLocation: CGPoint = .init(x: -1, y: -1)
-    var events: FetchRequest<Events>
-    
-    init() {
-        let request: NSFetchRequest<Events> = Events.fetchRequest()
-        request.sortDescriptors = [
-            NSSortDescriptor(keyPath: \Events.value, ascending: false)
-        ]
-        events = FetchRequest(fetchRequest: request)
-    }
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.date)
+    ]) var events: FetchedResults<Events>
 
     var body: some View {
         VStack {
@@ -94,7 +88,7 @@ struct PieChart: View {
     
     func createSlices() -> [PieSlice] {
         var slices = [PieSlice]()
-        events.wrappedValue.enumerated().forEach { (index, data) in
+        events.enumerated().forEach { (index, data) in
             let value = normalizedValue(index: index, data: events)
             if slices.isEmpty {
                 slices.append((.init(startDegree: 0, endDegree: value * 360)))
@@ -111,7 +105,7 @@ struct PieChart: View {
                                                touchLocation: touchLocation)
         else {return}
         let currentIndex = createSlices().firstIndex(where: { $0.startDegree < angle && $0.endDegree > angle }) ?? -1
-//
+
 //        currentLabel = data[currentIndex].label
 //        currentValue = "\(data[currentIndex].value)"
     }

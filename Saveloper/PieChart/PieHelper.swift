@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-func normalizedValue(index: Int, data: FetchRequest<Events>) -> Double {
+func normalizedValue(index: Int, data: FetchedResults<Events>) -> Double {
     var total = 0.0
-    data.wrappedValue.forEach { data in
+    data.forEach { data in
         total += data.value
     }
-    return data.wrappedValue[index].value/total
+    return data[index].value/total
 }
 
 struct PieSlice: Hashable {
