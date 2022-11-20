@@ -10,6 +10,7 @@ import SwiftUI
 struct SelectCategoryView: View {
     
     @Binding var value: Category?
+    
     @FetchRequest(sortDescriptors: [
         SortDescriptor(\.category)
     ]) var categories: FetchedResults<Category>

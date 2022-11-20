@@ -10,7 +10,6 @@ import SwiftUI
 struct MainView: View {
     
     @EnvironmentObject var persistenceController: PersistenceController
-    @Environment(\.managedObjectContext) var managedObjectContext
     @StateObject var pieChartViewModel = PieChartViewModel()
     
     @State var selectedPickerIndex = 0
@@ -46,7 +45,7 @@ struct MainView: View {
                         Spacer()
                     }
                     PieChart(pieChartViewModel)
-                    AddEventView(60)
+                    AddEventSelectorView(60)
                     NavigationLink(
                         destination: DetailedExpenses(pieChartViewModel.selectedEvent?.category?.category ?? ""
                                                      ), isActive: $pieChartViewModel.showDetailedEvent) {
@@ -69,66 +68,5 @@ struct MainView: View {
     
     func deleteAll() {
         persistenceController.deleteAll()
-    }
-    
-}
-
-struct AddCategorySheet: View {
-    
-    @EnvironmentObject var persistenceController: PersistenceController
-    @Environment(\.managedObjectContext) var managedObjectContext
-    @State var selectedCategory: String?
-    
-    let categories = ["person", "pin", "divide.circle", "bicycle.circle"]
-    
-    var body: some View {
-        VStack {
-            Button("Add category") {
-                if selectedCategory != nil {
-                    addCategory()
-                }
-                selectedCategory = nil
-            }
-            .padding()
-            AddCategoryView(value: $selectedCategory)
-                .padding()
-        }
-    }
-    
-    private func addCategory() {
-        let category = Category(context: managedObjectContext)
-        category.category = selectedCategory
-        persistenceController.save()
-    }
-}
-
-struct AddEventSheet: View {
-    
-    @EnvironmentObject var persistenceController: PersistenceController
-    @Environment(\.managedObjectContext) var managedObjectContext
-    
-    @State var selectedCategory: Category?
-    
-    var body: some View {
-        VStack {
-            Button("Add event") {
-                addEvent()
-            }
-            .padding()
-            SelectCategoryView(value: $selectedCategory)
-                .padding()
-        }
-    }
-    
-    private func addEvent() {
-        let event = Events(context: managedObjectContext)
-        if let category = selectedCategory {
-            event.category = category
-        }
-        event.date = Date()
-        event.inOrOut = Bool.random()
-        event.favorite = Bool.random()
-        event.value = Double.random(in: 0...300)
-        persistenceController.save()
     }
 }

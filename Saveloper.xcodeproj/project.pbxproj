@@ -14,14 +14,16 @@
 		928DDF232927D80700C5CF6A /* DetailedExpenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DDF222927D80700C5CF6A /* DetailedExpenses.swift */; };
 		928DDF262928825400C5CF6A /* PieChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DDF252928825400C5CF6A /* PieChartViewModel.swift */; };
 		928DDF282929D2B400C5CF6A /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DDF272929D2B400C5CF6A /* AddCategoryView.swift */; };
+		928DDF2A292A136F00C5CF6A /* AddCategorySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DDF29292A136F00C5CF6A /* AddCategorySheet.swift */; };
+		928DDF2C292A13EC00C5CF6A /* AddEventSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DDF2B292A13EC00C5CF6A /* AddEventSheet.swift */; };
+		928DDF2F292A153B00C5CF6A /* CircluarMenuButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DDF2E292A153B00C5CF6A /* CircluarMenuButtonItem.swift */; };
+		928DDF32292A15DA00C5CF6A /* CategoryVectorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DDF31292A15DA00C5CF6A /* CategoryVectorModel.swift */; };
+		928DDF34292A17B000C5CF6A /* AddEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DDF33292A17B000C5CF6A /* AddEventViewModel.swift */; };
 		92B46BCC291A065A00A32F76 /* SaveloperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BCB291A065A00A32F76 /* SaveloperApp.swift */; };
 		92B46BCE291A065A00A32F76 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BCD291A065A00A32F76 /* MainView.swift */; };
 		92B46BD0291A065B00A32F76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92B46BCF291A065B00A32F76 /* Assets.xcassets */; };
 		92B46BD3291A065B00A32F76 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92B46BD2291A065B00A32F76 /* Preview Assets.xcassets */; };
-		92B46BDA291A196C00A32F76 /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BD9291A196C00A32F76 /* MainConfigurator.swift */; };
-		92B46BDD291A1A3A00A32F76 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BDC291A1A3A00A32F76 /* MainViewModel.swift */; };
 		92B46BE0291A1B6B00A32F76 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BDF291A1B6B00A32F76 /* CancelBag.swift */; };
-		92B46BE2291A1C1F00A32F76 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BE1291A1C1F00A32F76 /* MainRouter.swift */; };
 		92B46BE5291AA4AE00A32F76 /* Tasks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BE3291AA4AE00A32F76 /* Tasks.xcdatamodeld */; };
 		92B46BE8291AA5FE00A32F76 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BE7291AA5FE00A32F76 /* PersistenceController.swift */; };
 		92B46BEA291BDA6200A32F76 /* Events+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BE9291BDA6200A32F76 /* Events+Extension.swift */; };
@@ -30,7 +32,7 @@
 		92B46BF1291BEF1200A32F76 /* ChartSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BF0291BEF1200A32F76 /* ChartSlice.swift */; };
 		92B46BF4291D3AAF00A32F76 /* CommonColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BF3291D3AAF00A32F76 /* CommonColors.swift */; };
 		92B46BF6291D3B8800A32F76 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BF5291D3B8800A32F76 /* Color+Extension.swift */; };
-		92B46BF9291D500800A32F76 /* AddEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BF8291D500800A32F76 /* AddEventView.swift */; };
+		92B46BF9291D500800A32F76 /* AddEventSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BF8291D500800A32F76 /* AddEventSelectorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,15 +45,17 @@
 		928DDF222927D80700C5CF6A /* DetailedExpenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedExpenses.swift; sourceTree = "<group>"; };
 		928DDF252928825400C5CF6A /* PieChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewModel.swift; sourceTree = "<group>"; };
 		928DDF272929D2B400C5CF6A /* AddCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryView.swift; sourceTree = "<group>"; };
+		928DDF29292A136F00C5CF6A /* AddCategorySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategorySheet.swift; sourceTree = "<group>"; };
+		928DDF2B292A13EC00C5CF6A /* AddEventSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventSheet.swift; sourceTree = "<group>"; };
+		928DDF2E292A153B00C5CF6A /* CircluarMenuButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircluarMenuButtonItem.swift; sourceTree = "<group>"; };
+		928DDF31292A15DA00C5CF6A /* CategoryVectorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVectorModel.swift; sourceTree = "<group>"; };
+		928DDF33292A17B000C5CF6A /* AddEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewModel.swift; sourceTree = "<group>"; };
 		92B46BC8291A065A00A32F76 /* Saveloper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Saveloper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B46BCB291A065A00A32F76 /* SaveloperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveloperApp.swift; sourceTree = "<group>"; };
 		92B46BCD291A065A00A32F76 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		92B46BCF291A065B00A32F76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92B46BD2291A065B00A32F76 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		92B46BD9291A196C00A32F76 /* MainConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfigurator.swift; sourceTree = "<group>"; };
-		92B46BDC291A1A3A00A32F76 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		92B46BDF291A1B6B00A32F76 /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
-		92B46BE1291A1C1F00A32F76 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		92B46BE4291AA4AE00A32F76 /* Tasks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tasks.xcdatamodel; sourceTree = "<group>"; };
 		92B46BE7291AA5FE00A32F76 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		92B46BE9291BDA6200A32F76 /* Events+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Events+Extension.swift"; sourceTree = "<group>"; };
@@ -60,7 +64,7 @@
 		92B46BF0291BEF1200A32F76 /* ChartSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartSlice.swift; sourceTree = "<group>"; };
 		92B46BF3291D3AAF00A32F76 /* CommonColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonColors.swift; sourceTree = "<group>"; };
 		92B46BF5291D3B8800A32F76 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
-		92B46BF8291D500800A32F76 /* AddEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventView.swift; sourceTree = "<group>"; };
+		92B46BF8291D500800A32F76 /* AddEventSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventSelectorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +81,10 @@
 		928DDF212927B10400C5CF6A /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				928DDF1D2926872300C5CF6A /* SelectCategoryView.swift */,
+				928DDF29292A136F00C5CF6A /* AddCategorySheet.swift */,
 				928DDF272929D2B400C5CF6A /* AddCategoryView.swift */,
+				928DDF2B292A13EC00C5CF6A /* AddEventSheet.swift */,
+				928DDF1D2926872300C5CF6A /* SelectCategoryView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -89,6 +95,24 @@
 				928DDF222927D80700C5CF6A /* DetailedExpenses.swift */,
 			);
 			path = DetailedExpensesView;
+			sourceTree = "<group>";
+		};
+		928DDF2D292A14CA00C5CF6A /* Subs */ = {
+			isa = PBXGroup;
+			children = (
+				92B46BF0291BEF1200A32F76 /* ChartSlice.swift */,
+				92B46BED291BEECB00A32F76 /* PieSliceModel.swift */,
+			);
+			path = Subs;
+			sourceTree = "<group>";
+		};
+		928DDF30292A154200C5CF6A /* Subs */ = {
+			isa = PBXGroup;
+			children = (
+				928DDF2E292A153B00C5CF6A /* CircluarMenuButtonItem.swift */,
+				928DDF31292A15DA00C5CF6A /* CategoryVectorModel.swift */,
+			);
+			path = Subs;
 			sourceTree = "<group>";
 		};
 		92B46BBF291A065A00A32F76 = {
@@ -135,10 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				928DDF212927B10400C5CF6A /* SubViews */,
-				92B46BD9291A196C00A32F76 /* MainConfigurator.swift */,
-				92B46BE1291A1C1F00A32F76 /* MainRouter.swift */,
 				92B46BCD291A065A00A32F76 /* MainView.swift */,
-				92B46BDC291A1A3A00A32F76 /* MainViewModel.swift */,
 			);
 			path = MainModule;
 			sourceTree = "<group>";
@@ -164,10 +185,9 @@
 		92B46BEF291BEED200A32F76 /* PieChart */ = {
 			isa = PBXGroup;
 			children = (
+				928DDF2D292A14CA00C5CF6A /* Subs */,
 				92B46BEB291BEE8700A32F76 /* PieChart.swift */,
-				92B46BF0291BEF1200A32F76 /* ChartSlice.swift */,
 				928DDF252928825400C5CF6A /* PieChartViewModel.swift */,
-				92B46BED291BEECB00A32F76 /* PieSliceModel.swift */,
 			);
 			path = PieChart;
 			sourceTree = "<group>";
@@ -198,7 +218,9 @@
 		92B46BFA291D501C00A32F76 /* AddEvent */ = {
 			isa = PBXGroup;
 			children = (
-				92B46BF8291D500800A32F76 /* AddEventView.swift */,
+				928DDF30292A154200C5CF6A /* Subs */,
+				92B46BF8291D500800A32F76 /* AddEventSelectorView.swift */,
+				928DDF33292A17B000C5CF6A /* AddEventViewModel.swift */,
 			);
 			path = AddEvent;
 			sourceTree = "<group>";
@@ -297,23 +319,25 @@
 			files = (
 				92B46BCE291A065A00A32F76 /* MainView.swift in Sources */,
 				924E2CE02920FF860023181E /* Optional+Extension.swift in Sources */,
+				928DDF2C292A13EC00C5CF6A /* AddEventSheet.swift in Sources */,
 				92B46BF6291D3B8800A32F76 /* Color+Extension.swift in Sources */,
+				928DDF2A292A136F00C5CF6A /* AddCategorySheet.swift in Sources */,
 				92B46BE5291AA4AE00A32F76 /* Tasks.xcdatamodeld in Sources */,
 				928DDF232927D80700C5CF6A /* DetailedExpenses.swift in Sources */,
 				92B46BF4291D3AAF00A32F76 /* CommonColors.swift in Sources */,
 				92B46BCC291A065A00A32F76 /* SaveloperApp.swift in Sources */,
 				928DDF122923DD6700C5CF6A /* UIScreen+Extension.swift in Sources */,
-				92B46BDA291A196C00A32F76 /* MainConfigurator.swift in Sources */,
 				928DDF1E2926872300C5CF6A /* SelectCategoryView.swift in Sources */,
-				92B46BDD291A1A3A00A32F76 /* MainViewModel.swift in Sources */,
 				928DDF262928825400C5CF6A /* PieChartViewModel.swift in Sources */,
+				928DDF2F292A153B00C5CF6A /* CircluarMenuButtonItem.swift in Sources */,
 				92B46BEA291BDA6200A32F76 /* Events+Extension.swift in Sources */,
 				92B46BE0291A1B6B00A32F76 /* CancelBag.swift in Sources */,
-				92B46BE2291A1C1F00A32F76 /* MainRouter.swift in Sources */,
-				92B46BF9291D500800A32F76 /* AddEventView.swift in Sources */,
+				92B46BF9291D500800A32F76 /* AddEventSelectorView.swift in Sources */,
 				92B46BE8291AA5FE00A32F76 /* PersistenceController.swift in Sources */,
+				928DDF34292A17B000C5CF6A /* AddEventViewModel.swift in Sources */,
 				92B46BF1291BEF1200A32F76 /* ChartSlice.swift in Sources */,
 				92B46BEC291BEE8700A32F76 /* PieChart.swift in Sources */,
+				928DDF32292A15DA00C5CF6A /* CategoryVectorModel.swift in Sources */,
 				928DDF1A292538C600C5CF6A /* View+Extension.swift in Sources */,
 				928DDF282929D2B400C5CF6A /* AddCategoryView.swift in Sources */,
 				92B46BEE291BEECB00A32F76 /* PieSliceModel.swift in Sources */,

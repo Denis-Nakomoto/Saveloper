@@ -9,17 +9,6 @@ import SwiftUI
 
 struct PieChart: View {
     
-    let accentColors = [
-         Color.init(hex: "#2f4b7c"),
-         Color.init(hex: "#003f5c"),
-         Color.init(hex: "#665191"),
-         Color.init(hex: "#a05195"),
-         Color.init(hex: "#d45087"),
-         Color.init(hex: "#f95d6a"),
-         Color.init(hex: "#ff7c43"),
-         Color.init(hex: "#ffa600")
-     ]
-
     @StateObject var pieChartViewModel: PieChartViewModel
     
     init(_ pieChartViewModel: PieChartViewModel) {
@@ -29,7 +18,7 @@ struct PieChart: View {
     @FetchRequest(sortDescriptors: [
         SortDescriptor(\.date)
     ]) var events: FetchedResults<Events>
-
+    
     var body: some View {
         VStack {
             ZStack {
@@ -44,7 +33,7 @@ struct PieChart: View {
                                           isTouched: pieChartViewModel.sliceIsTouched(slice: item,
                                                                                       inPie: geometry.frame(in: .local),
                                                                                       events: events),
-                                          accentColor: accentColors.randomElement() ?? .white,
+                                          accentColor: Color.init(hex: item.event.color ?? "#2f4b7c"),
                                           separatorColor: .white)
                             .gesture(DragGesture(minimumDistance: 0)
                                 .onChanged({ position in
@@ -65,7 +54,6 @@ struct PieChart: View {
                             )
                         }
                     }
-
                 }
                 .aspectRatio(contentMode: .fit)
                 VStack {

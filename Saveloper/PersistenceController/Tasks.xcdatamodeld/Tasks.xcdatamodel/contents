@@ -5,6 +5,7 @@
         <relationship name="events" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Events" inverseName="category" inverseEntity="Events"/>
     </entity>
     <entity name="Events" representedClassName="Events" syncable="YES" codeGenerationType="class">
+        <attribute name="color" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="favorite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="inOrOut" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
