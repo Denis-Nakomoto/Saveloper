@@ -10,7 +10,10 @@
 		924E2CE02920FF860023181E /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924E2CDF2920FF860023181E /* Optional+Extension.swift */; };
 		928DDF122923DD6700C5CF6A /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DDF112923DD6700C5CF6A /* UIScreen+Extension.swift */; };
 		928DDF1A292538C600C5CF6A /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DDF19292538C600C5CF6A /* View+Extension.swift */; };
-		928DDF1E2926872300C5CF6A /* SelectCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DDF1D2926872300C5CF6A /* SelectCategory.swift */; };
+		928DDF1E2926872300C5CF6A /* SelectCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DDF1D2926872300C5CF6A /* SelectCategoryView.swift */; };
+		928DDF232927D80700C5CF6A /* DetailedExpenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DDF222927D80700C5CF6A /* DetailedExpenses.swift */; };
+		928DDF262928825400C5CF6A /* PieChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DDF252928825400C5CF6A /* PieChartViewModel.swift */; };
+		928DDF282929D2B400C5CF6A /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928DDF272929D2B400C5CF6A /* AddCategoryView.swift */; };
 		92B46BCC291A065A00A32F76 /* SaveloperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BCB291A065A00A32F76 /* SaveloperApp.swift */; };
 		92B46BCE291A065A00A32F76 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BCD291A065A00A32F76 /* MainView.swift */; };
 		92B46BD0291A065B00A32F76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92B46BCF291A065B00A32F76 /* Assets.xcassets */; };
@@ -23,7 +26,7 @@
 		92B46BE8291AA5FE00A32F76 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BE7291AA5FE00A32F76 /* PersistenceController.swift */; };
 		92B46BEA291BDA6200A32F76 /* Events+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BE9291BDA6200A32F76 /* Events+Extension.swift */; };
 		92B46BEC291BEE8700A32F76 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BEB291BEE8700A32F76 /* PieChart.swift */; };
-		92B46BEE291BEECB00A32F76 /* PieHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BED291BEECB00A32F76 /* PieHelper.swift */; };
+		92B46BEE291BEECB00A32F76 /* PieSliceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BED291BEECB00A32F76 /* PieSliceModel.swift */; };
 		92B46BF1291BEF1200A32F76 /* ChartSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BF0291BEF1200A32F76 /* ChartSlice.swift */; };
 		92B46BF4291D3AAF00A32F76 /* CommonColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BF3291D3AAF00A32F76 /* CommonColors.swift */; };
 		92B46BF6291D3B8800A32F76 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92B46BF5291D3B8800A32F76 /* Color+Extension.swift */; };
@@ -36,7 +39,10 @@
 		928DDF19292538C600C5CF6A /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		928DDF1B292540C900C5CF6A /* UISheetPresentationControllerDetent+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UISheetPresentationControllerDetent+Private.h"; sourceTree = "<group>"; };
 		928DDF1C292540EC00C5CF6A /* CustomSPCDetent-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CustomSPCDetent-Bridging-Header.h"; sourceTree = "<group>"; };
-		928DDF1D2926872300C5CF6A /* SelectCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategory.swift; sourceTree = "<group>"; };
+		928DDF1D2926872300C5CF6A /* SelectCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryView.swift; sourceTree = "<group>"; };
+		928DDF222927D80700C5CF6A /* DetailedExpenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedExpenses.swift; sourceTree = "<group>"; };
+		928DDF252928825400C5CF6A /* PieChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartViewModel.swift; sourceTree = "<group>"; };
+		928DDF272929D2B400C5CF6A /* AddCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryView.swift; sourceTree = "<group>"; };
 		92B46BC8291A065A00A32F76 /* Saveloper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Saveloper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92B46BCB291A065A00A32F76 /* SaveloperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveloperApp.swift; sourceTree = "<group>"; };
 		92B46BCD291A065A00A32F76 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -50,7 +56,7 @@
 		92B46BE7291AA5FE00A32F76 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		92B46BE9291BDA6200A32F76 /* Events+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Events+Extension.swift"; sourceTree = "<group>"; };
 		92B46BEB291BEE8700A32F76 /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
-		92B46BED291BEECB00A32F76 /* PieHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieHelper.swift; sourceTree = "<group>"; };
+		92B46BED291BEECB00A32F76 /* PieSliceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceModel.swift; sourceTree = "<group>"; };
 		92B46BF0291BEF1200A32F76 /* ChartSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartSlice.swift; sourceTree = "<group>"; };
 		92B46BF3291D3AAF00A32F76 /* CommonColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonColors.swift; sourceTree = "<group>"; };
 		92B46BF5291D3B8800A32F76 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
@@ -71,9 +77,18 @@
 		928DDF212927B10400C5CF6A /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
-				928DDF1D2926872300C5CF6A /* SelectCategory.swift */,
+				928DDF1D2926872300C5CF6A /* SelectCategoryView.swift */,
+				928DDF272929D2B400C5CF6A /* AddCategoryView.swift */,
 			);
 			path = SubViews;
+			sourceTree = "<group>";
+		};
+		928DDF242927D82300C5CF6A /* DetailedExpensesView */ = {
+			isa = PBXGroup;
+			children = (
+				928DDF222927D80700C5CF6A /* DetailedExpenses.swift */,
+			);
+			path = DetailedExpensesView;
 			sourceTree = "<group>";
 		};
 		92B46BBF291A065A00A32F76 = {
@@ -99,6 +114,7 @@
 				92B46BE6291AA5D600A32F76 /* PersistenceController */,
 				92B46BF7291D3B9100A32F76 /* Extensions */,
 				92B46BDB291A199D00A32F76 /* MainModule */,
+				928DDF242927D82300C5CF6A /* DetailedExpensesView */,
 				92B46BFA291D501C00A32F76 /* AddEvent */,
 				92B46BEF291BEED200A32F76 /* PieChart */,
 				92B46BF2291D3A0E00A32F76 /* Resources */,
@@ -150,7 +166,8 @@
 			children = (
 				92B46BEB291BEE8700A32F76 /* PieChart.swift */,
 				92B46BF0291BEF1200A32F76 /* ChartSlice.swift */,
-				92B46BED291BEECB00A32F76 /* PieHelper.swift */,
+				928DDF252928825400C5CF6A /* PieChartViewModel.swift */,
+				92B46BED291BEECB00A32F76 /* PieSliceModel.swift */,
 			);
 			path = PieChart;
 			sourceTree = "<group>";
@@ -282,12 +299,14 @@
 				924E2CE02920FF860023181E /* Optional+Extension.swift in Sources */,
 				92B46BF6291D3B8800A32F76 /* Color+Extension.swift in Sources */,
 				92B46BE5291AA4AE00A32F76 /* Tasks.xcdatamodeld in Sources */,
+				928DDF232927D80700C5CF6A /* DetailedExpenses.swift in Sources */,
 				92B46BF4291D3AAF00A32F76 /* CommonColors.swift in Sources */,
 				92B46BCC291A065A00A32F76 /* SaveloperApp.swift in Sources */,
 				928DDF122923DD6700C5CF6A /* UIScreen+Extension.swift in Sources */,
 				92B46BDA291A196C00A32F76 /* MainConfigurator.swift in Sources */,
-				928DDF1E2926872300C5CF6A /* SelectCategory.swift in Sources */,
+				928DDF1E2926872300C5CF6A /* SelectCategoryView.swift in Sources */,
 				92B46BDD291A1A3A00A32F76 /* MainViewModel.swift in Sources */,
+				928DDF262928825400C5CF6A /* PieChartViewModel.swift in Sources */,
 				92B46BEA291BDA6200A32F76 /* Events+Extension.swift in Sources */,
 				92B46BE0291A1B6B00A32F76 /* CancelBag.swift in Sources */,
 				92B46BE2291A1C1F00A32F76 /* MainRouter.swift in Sources */,
@@ -296,7 +315,8 @@
 				92B46BF1291BEF1200A32F76 /* ChartSlice.swift in Sources */,
 				92B46BEC291BEE8700A32F76 /* PieChart.swift in Sources */,
 				928DDF1A292538C600C5CF6A /* View+Extension.swift in Sources */,
-				92B46BEE291BEECB00A32F76 /* PieHelper.swift in Sources */,
+				928DDF282929D2B400C5CF6A /* AddCategoryView.swift in Sources */,
+				92B46BEE291BEECB00A32F76 /* PieSliceModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

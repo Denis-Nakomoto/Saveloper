@@ -147,7 +147,6 @@ private struct CircluarMenuButtonItem: View {
     var handler: (String) -> Void
     var body: some View {
         Button {
-            print("\(imageName) clicked")
             handler(imageName)
         } label: {
             Image(systemName: imageName)

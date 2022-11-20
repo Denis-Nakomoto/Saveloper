@@ -32,15 +32,15 @@ struct PieChartSlice: View {
             .fill(accentColor)
             .overlay(path.stroke(separatorColor, lineWidth: 2))
             .scaleEffect(isTouched ? 1.05 : 1)
-            .animation(Animation.spring())
+            .animation(Animation.spring(), value: 1)
     }
 }
 
-struct PieChartSlice_Previews: PreviewProvider {
-    static var previews: some View {
-        PieChartSlice(center: CGPoint(x: 100, y: 200),
-                      radius: 300, startDegree: 30, endDegree: 80,
-                      isTouched: true, accentColor: .orange,
-                      separatorColor: .black)
-    }
-}
+//struct PieChartSlice_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PieChartSlice(center: CGPoint(x: 100, y: 200),
+//                      radius: 300, startDegree: 30, endDegree: 80,
+//                      isTouched: true, accentColor: .orange,
+//                      separatorColor: .black)
+//    }
+//}
